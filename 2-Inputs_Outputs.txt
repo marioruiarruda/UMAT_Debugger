@@ -1,0 +1,43 @@
+----####-------------------------------------------####---
+        For real variables the subroutine 
+        DEBUGGER_REAL should be used.
+----####-------------------------------------------####---
+
+The input for the debugger is:
+DEBUGGER(VARIABLE,NUMBER OF LINES, NUMBER OF COLUMNS, CHARACTER NAME, LINE NUMBER, TYPE OF OUTPUT)
+a) For example in the case of a matrix:
+  call debugger_real(ddsdde,ntens,ntens,"JACOBIAN",288,0)
+b) For example in the case of a vector:
+  call debugger_real(stress,ntens,1,"STRESS",173,0)
+c) For example in the case of a scalar:
+  call debugger_real(celent,1,1,"CHARACTERISTIC LENGTH",69,0)
+
+The TYPE OF OUTPUT, should always be INTEGER, and can be:
+a) 0
+  For non-formating number presentation, may dependend on the operating system and compiler. 
+  Caution is advise for a correct presentation.
+b) 1  
+  For Scientific number presentation, may dependend on the operating system and compiler. 
+  Caution is advise
+c) 2
+  For Scientific number presentation. According to Fortran 90 standards for all compilers.
+  
+The line number is optional, but a number is required.
+Recomending using the line number of your IDE code to help debugging.
+
+----####-------------------------------------------####---
+        For integer variables the subroutine 
+        DEBUGGER_integer should be used.
+----####-------------------------------------------####---
+
+The same input as the real debugger subroutine
+
+The TYPE OF OUTPUT, should always be INTEGER, and can be:
+a) 0
+  May dependend on the operating system and compiler. 
+  Caution is advise for a correct presentation.
+b) 1  
+  May dependend on the operating system and compiler. 
+  Caution is advise
+c) 2
+  According to Fortran 90 standards for all compilers.

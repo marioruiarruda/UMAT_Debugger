@@ -1,0 +1,43 @@
+----####--------------------------------####---
+----####----COPYRIGHT AND QUESTIONS-----####---
+----####--------------------------------####---
+
+1) Copyright 2024 by Mário Rui Arruda all rights reserved. 
+
+2) Questions can be emailed to mario.rui.arruda@tecnico.ulisboa.pt
+
+----####--------------------------------####---
+----####--------R&D FORTRAN CODE--------####---
+----####--------------------------------####---
+
+1) The Subroutine has been updated since the initial publication, and since it is academic code, 
+it may not be optimized, and some bugs may occur.
+
+2) This Subroutine prints correctly ??x10 matrixes on the screen. 
+For bigger matrix, WRITE(6,'(10E15.6)') needs to be updated.
+
+----####--------------------------------####---
+----####-----COMPILING INSTRUCTIONS-----####---
+----####--------------------------------####---
+
+There are two paths for compiling. The subroutine must be in the same folder of the UMAT file.
+The UMAT in FORTRAN 77 standards or in Fortran 90 standards.
+
+a) The first path using FORTRAN 77 standards:
+
+  Add add the directive !DIR$ FREEFORM in the 1st line before the subroutine name (DEBBUGER_REAL).
+  This does not work in GNU GFORTRAN COMPILER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  In the general UMAT file, after the end of the UMAT "END SUBROUTINE UMAT" in the next line:
+  include 'DEBBUGER_REAL.F90'
+
+b) If you are compiling already your UMAT with Fortran 90 standards, 
+  with the flags reported below, then it is simple:
+
+  After the end of the UMAT "END SUBROUTINE" in the next line include the code:
+  include 'DEBBUGER_REAL.F90'
+    
+  For Linux in the lnx86_64.ENV file add the flag to "compile_fortran": 
+  -free for INTEL COMPILER 
+  -ffree-form for GNU GFORTRAN COMPILER
+  For Windows in the win86_64.ENV add the flag to "compile_fortran":
+  /free for INTEL COMPILER
